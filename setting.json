@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Sedir Masaj: klasik, derin doku ve aromaterapi masajı; randevulu, sakin seanslar. (Demo site)",
+    "en": "Sedir Massage: classic, deep-tissue and aromatherapy massage; calm sessions by appointment. (Demo site)",
+    "ar": "سدير للتدليك: تدليك كلاسيكي وتدليك الأنسجة العميقة وتدليك بالزيوت العطرية؛ جلسات هادئة بموعد مسبق. (موقع تجريبي)"
+  },
+  "keyword": {
+    "tr": "masaj, terapi, derin doku masajı, aromaterapi, refleksoloji",
+    "en": "massage, therapy, deep tissue massage, aromatherapy, reflexology",
+    "ar": "تدليك، علاج بالتدليك، تدليك الأنسجة العميقة، العلاج بالروائح، علاج انعكاسي"
+  },
+  "category": "Kurumsal",
+  "name": "Sedir Masaj",
+  "domain": "masaj.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "nunito-sans",
+    "heading": "dm-serif-display",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#2F6B5E",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "8px",
+    "--mx-radius-md": "14px",
+    "--mx-radius-lg": "20px",
+    "--mx-radius-xl": "27px"
+  },
+  "icon": "icon.png"
+}

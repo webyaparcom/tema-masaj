@@ -1,0 +1,40 @@
+{
+  "id": "95312h8o5m",
+  "name": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our services",
+    "ar": "خدماتنا"
+  },
+  "description": {
+    "tr": "Her seans kısa bir ön görüşmeyle başlar; baskı, süre ve odak bölgesi size göre ayarlanır.",
+    "en": "Every session starts with a short pre-talk; pressure, duration and focus area are adjusted to you.",
+    "ar": "تبدأ كل جلسة بحديث قصير مسبق؛ ويُضبط الضغط والمدة ومنطقة التركيز بما يناسبك."
+  },
+  "keyword": {
+    "tr": "Seanslar",
+    "en": "Sessions",
+    "ar": "الجلسات"
+  },
+  "path": "hizmetler",
+  "icon": "work",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "4moret",
+      "r7eepj"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our services",
+    "ar": "خدماتنا"
+  },
+  "date": "2026-11-05T23:22:26.050Z",
+  "update": "2026-11-05T23:44:44.404Z"
+}
