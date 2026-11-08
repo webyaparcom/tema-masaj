@@ -1,0 +1,191 @@
+{
+  "data": [
+    {
+      "id": "95312h8o5m",
+      "name": {
+        "tr": "Hizmetlerimiz",
+        "en": "Our services",
+        "ar": "خدماتنا"
+      },
+      "description": {
+        "tr": "Her seans kısa bir ön görüşmeyle başlar; baskı, süre ve odak bölgesi size göre ayarlanır.",
+        "en": "Every session starts with a short pre-talk; pressure, duration and focus area are adjusted to you.",
+        "ar": "تبدأ كل جلسة بحديث قصير مسبق؛ ويُضبط الضغط والمدة ومنطقة التركيز بما يناسبك."
+      },
+      "path": "hizmetler",
+      "icon": "work",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "4moret",
+          "r7eepj"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Hakkımızda",
+        "en": "About us",
+        "ar": "من نحن"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "wl53d9",
+          "ie0qsk"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Sessiz odalarda, ön görüşmeli masaj ve terapi seansları.",
+        "en": "Massage and therapy sessions with a pre-talk, in quiet rooms.",
+        "ar": "جلسات تدليك وعلاج مع حديث مسبق في غرف هادئة."
+      }
+    },
+    {
+      "id": "t2c3nf2yc7",
+      "name": {
+        "tr": "Ekibimiz",
+        "en": "Our team",
+        "ar": "فريقنا"
+      },
+      "description": {
+        "tr": "Sizi karşılayan çalışanlarımız.",
+        "en": "The staff who welcomes you.",
+        "ar": "الموظفون الذين يستقبلونكم."
+      },
+      "path": "ekip",
+      "icon": "groups",
+      "category": "hakkimizda",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "d33wv8",
+          "62s8gh"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "qs47l3l6yr",
+      "name": {
+        "tr": "Sıkça sorulanlar",
+        "en": "FAQ",
+        "ar": "الأسئلة الشائعة"
+      },
+      "description": {
+        "tr": "Merak edilenler ve kısa yanıtlar.",
+        "en": "Common questions and short answers.",
+        "ar": "أسئلة متكررة وإجابات موجزة."
+      },
+      "path": "sorular",
+      "icon": "help",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "1cfrd2",
+          "r7eepj"
+        ],
+        "footer": []
+      },
+      "index": 3
+    },
+    {
+      "id": "b26mgcor91",
+      "name": {
+        "tr": "Referanslar",
+        "en": "References",
+        "ar": "المرجعيات"
+      },
+      "description": {
+        "tr": "İş ortaklarımız ve müşteri yorumlarımız (kurgusal).",
+        "en": "Our partners and customer reviews (fictional).",
+        "ar": "شركاؤنا وتقييمات عملائنا (افتراضية)."
+      },
+      "path": "referanslar",
+      "icon": "stars",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "u7krwn",
+          "62s8gh",
+          "r7eepj"
+        ],
+        "footer": []
+      },
+      "index": 4
+    },
+    {
+      "id": "1zhpbj9qun",
+      "name": {
+        "tr": "Teklif al",
+        "en": "Get a quote",
+        "ar": "اطلب عرض سعر"
+      },
+      "description": {
+        "tr": "Teklif formu (demo).",
+        "en": "Quote form (demo).",
+        "ar": "نموذج طلب عرض سعر (تجريبي)."
+      },
+      "path": "teklif-al",
+      "icon": "request_quote",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "7a09cn"
+        ],
+        "footer": []
+      },
+      "index": 5
+    },
+    {
+      "name": {
+        "tr": "İletişim",
+        "en": "Contact",
+        "ar": "اتصل بنا"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "",
+      "url": "",
+      "index": 6,
+      "icon": "call",
+      "desing": {
+        "header": [],
+        "body": [
+          "i1w3s3",
+          "k8mp01"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Adres, telefon ve çalışma saatleri.",
+        "en": "Address, phone and opening hours.",
+        "ar": "العنوان والهاتف وساعات العمل."
+      }
+    }
+  ],
+  "desc": []
+}
