@@ -30,6 +30,12 @@
           "tr": "(yeni sekmede açılır)",
           "en": "(opens in a new tab)",
           "ar": "(يفتح في علامة تبويب جديدة)"
+        },
+        "girisHref": "",
+        "girisText": {
+          "tr": "Üye Girişi",
+          "en": "Login",
+          "ar": "تسجيل الدخول"
         }
       },
       "version": "1.0.0",
@@ -766,7 +772,12 @@
         "social_media": false,
         "logo_maxh": "60px",
         "logo_plate": false,
-        "contact_line": "auto"
+        "contact_line": "auto",
+        "logoDark": "",
+        "duzen": "",
+        "slogan": "",
+        "ikinciSutun": "",
+        "iletisimNot": ""
       },
       "version": "1.0.0",
       "icon": "widgets",
@@ -1478,9 +1489,9 @@
         "accentText": "var(--mx-site-primary-contrast, #ffffff)",
         "border": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 14%, transparent)",
         "cta": {
-          "tr": "Teklif al",
-          "en": "Get a quote",
-          "ar": "اطلب عرض سعر"
+          "tr": "Randevu iste",
+          "en": "Book a session",
+          "ar": "اطلب موعدًا"
         },
         "cta_url": "teklif-al"
       },
@@ -1644,12 +1655,12 @@
         },
         {
           "deger": 80,
-          "sonek": " dk",
+          "sonek": "",
           "ikon": "schedule",
           "etiket": {
-            "tr": "En uzun seans",
-            "en": "Longest session",
-            "ar": "أطول جلسة"
+            "tr": "En uzun seans (dakika)",
+            "en": "Longest session (minutes)",
+            "ar": "أطول جلسة (بالدقائق)"
           },
           "aciklama": {
             "tr": "Kurgusal demo değeri",
@@ -1814,19 +1825,19 @@
         "accent": "var(--mx-site-primary, #2563eb)",
         "linecolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
         "badge": {
-          "tr": "Nasıl çalışırız?",
-          "en": "How we work",
-          "ar": "كيف نعمل؟"
+          "tr": "Seans nasıl ilerler?",
+          "en": "How a session goes",
+          "ar": "كيف تسير الجلسة؟"
         },
         "title": {
-          "tr": "Dört adımda süreç",
-          "en": "Process in four steps",
-          "ar": "العملية في أربع خطوات"
+          "tr": "Ön görüşmeden dinlenmeye",
+          "en": "From the first chat to rest",
+          "ar": "من الحديث الأول إلى الاستراحة"
         },
         "description": {
-          "tr": "İlk görüşmeden teslimata aynı akış.",
-          "en": "The same flow, from first meeting to handover.",
-          "ar": "نفس التيار من أول لقاء إلى التسليم."
+          "tr": "Bir seansın dört adımı.",
+          "en": "The four steps of a session.",
+          "ar": "الخطوات الأربع للجلسة."
         },
         "accentText": "#ffffff",
         "cardbg": "var(--mx-site-surface, #ffffff)",
@@ -1911,14 +1922,14 @@
         "textcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
         "accent": "var(--mx-site-primary, #2563eb)",
         "badge": {
-          "tr": "Ekibimiz",
-          "en": "Our team",
-          "ar": "فريقنا"
+          "tr": "Terapistlerimiz",
+          "en": "Our therapists",
+          "ar": "معالجونا"
         },
         "title": {
-          "tr": "Sizi karşılayan ekip",
-          "en": "The team that welcomes you",
-          "ar": "الفريق الذي يستقبلك"
+          "tr": "Seansınızı yürütenler",
+          "en": "Who runs your session",
+          "ar": "من يتولون جلستك"
         },
         "description": {
           "tr": "Kurgusal demo profiller.",
@@ -1998,13 +2009,13 @@
         "accent": "var(--mx-site-primary, #2563eb)",
         "starcolor": "#f59e0b",
         "badge": {
-          "tr": "Müşteri yorumları",
-          "en": "Customer reviews",
-          "ar": "تقييمات العملاء"
+          "tr": "Yorumlar",
+          "en": "Reviews",
+          "ar": "التقييمات"
         },
         "title": {
-          "tr": "Müşterilerimiz ne diyor?",
-          "en": "What our customers say",
+          "tr": "Danışanlarımız ne diyor?",
+          "en": "What our clients say",
           "ar": "ماذا يقول عملاؤنا؟"
         },
         "description": {
@@ -2103,9 +2114,9 @@
         "radius": "14px",
         "numara": true,
         "eyebrow": {
-          "tr": "Neyi iyi yaparız?",
-          "en": "What we do well",
-          "ar": "ما نتقنه؟"
+          "tr": "Stüdyodan kareler",
+          "en": "From the studio",
+          "ar": "من الاستوديو"
         },
         "title": {
           "tr": "Size uygun masajı birlikte seçelim",
@@ -2113,9 +2124,9 @@
           "ar": "لنختر معًا التدليك المناسب لك"
         },
         "description": {
-          "tr": "Görseller temsilidir; bu bir kurulum demosıdır.",
-          "en": "Images are representative; this is a setup demo.",
-          "ar": "الصور تمثيلية وهذا عرض تجريبي."
+          "tr": "Görseller temsilîdir; metinler kurgusaldır.",
+          "en": "Images are representative; text is fictional.",
+          "ar": "الصور تمثيلية والنصوص افتراضية."
         },
         "ctaLabel": {
           "tr": "Ayrıntı",
@@ -2154,7 +2165,7 @@
             "en": "Firm pressure on back, neck and shoulders; if you have pain or a condition, consult your doctor first.",
             "ar": "ضغط قوي على الظهر والرقبة والكتفين؛ إن كان لديك ألم أو حالة صحية فاستشر طبيبك أولًا."
           },
-          "img": "guzellik-galeri-2.webp",
+          "img": "guzellik-ekip-2.webp",
           "alt": {
             "tr": "Temsilî görsel",
             "en": "Representative image",
@@ -2173,7 +2184,7 @@
             "en": "A gently paced session with the plant oil you choose; mention any allergy when booking.",
             "ar": "جلسة بإيقاع هادئ بالزيت النباتي الذي تختاره؛ اذكر أي حساسية عند الحجز."
           },
-          "img": "guzellik-galeri-4.webp",
+          "img": "guzellik-galeri-2.webp",
           "alt": {
             "tr": "Temsilî görsel",
             "en": "Representative image",
@@ -2229,14 +2240,14 @@
         "radius": "14px",
         "showTitle": true,
         "title": {
-          "tr": "Birlikte çalıştığımız kuruluşlar",
-          "en": "Organisations we work with",
-          "ar": "جهات نعمل معها"
+          "tr": "Birlikte çalıştığımız yerler",
+          "en": "Places we work with",
+          "ar": "جهات نتعاون معها"
         },
         "description": {
-          "tr": "Kurgusal iş ortağı adları; gerçek bir kuruluşa ait değildir.",
-          "en": "Fictional partner names; they do not belong to a real organisation.",
-          "ar": "أسماء شركاء افتراضية لا تعود إلى جهة حقيقية."
+          "tr": "Kurgusal kuruluş adları; gerçek bir kuruluşa ait değildir.",
+          "en": "Fictional organisation names; they do not belong to a real organisation.",
+          "ar": "أسماء جهات افتراضية لا تعود إلى جهة حقيقية."
         },
         "listLabel": {
           "tr": "Referans logoları",
@@ -2304,6 +2315,16 @@
       },
       "data": [
         {
+          "question": {
+            "tr": "Masaj tıbbi bir tedavi midir?",
+            "en": "Is massage a medical treatment?",
+            "ar": "هل التدليك علاج طبي؟"
+          },
+          "answer": {
+            "tr": "Hayır. Seanslar rahatlama amaçlıdır; ağrı, yaralanma, hamilelik ya da kronik bir rahatsızlıkta önce hekiminize danışın.",
+            "en": "No. Sessions are for relaxation; if you have pain, an injury, a pregnancy or a chronic condition, consult your doctor first.",
+            "ar": "لا. الجلسات للاسترخاء؛ وإن كان لديك ألم أو إصابة أو حمل أو حالة مزمنة فاستشر طبيبك أولًا."
+          },
           "soru": {
             "tr": "Masaj tıbbi bir tedavi midir?",
             "en": "Is massage a medical treatment?",
@@ -2316,6 +2337,16 @@
           }
         },
         {
+          "question": {
+            "tr": "Seansa nasıl hazırlanmalıyım?",
+            "en": "How should I prepare for a session?",
+            "ar": "كيف أستعد للجلسة؟"
+          },
+          "answer": {
+            "tr": "Seanstan bir saat önce ağır yemek yemeyin, 10 dakika erken gelin; havlu ve tek kullanımlık giysi bizden.",
+            "en": "Avoid a heavy meal an hour before and arrive 10 minutes early; towels and disposable wear are provided.",
+            "ar": "تجنّب وجبة ثقيلة قبل الجلسة بساعة واحضر قبل الموعد بعشر دقائق؛ المناشف والملابس أحادية الاستخدام متوفرة."
+          },
           "soru": {
             "tr": "Seansa nasıl hazırlanmalıyım?",
             "en": "How should I prepare for a session?",
@@ -2328,6 +2359,16 @@
           }
         },
         {
+          "question": {
+            "tr": "Randevuyu iptal edebilir miyim?",
+            "en": "Can I cancel my appointment?",
+            "ar": "هل يمكنني إلغاء الموعد؟"
+          },
+          "answer": {
+            "tr": "Seanstan en az 12 saat önce haber verirseniz ücretsiz iptal ya da tarih değişikliği yapılır (demo koşulu).",
+            "en": "Free cancellation or rescheduling if you let us know at least 12 hours before the session (demo terms).",
+            "ar": "الإلغاء أو تغيير الموعد مجاني إذا أبلغتنا قبل الجلسة بـ 12 ساعة على الأقل (شروط تجريبية)."
+          },
           "soru": {
             "tr": "Randevuyu iptal edebilir miyim?",
             "en": "Can I cancel my appointment?",
@@ -2340,6 +2381,16 @@
           }
         },
         {
+          "question": {
+            "tr": "Sitedeki görseller ve veriler gerçek midir?",
+            "en": "Are the images and data on the site real?",
+            "ar": "هل الصور والبيانات في الموقع حقيقية؟"
+          },
+          "answer": {
+            "tr": "Hayır; bu bir kurulum örneğidir. Görseller temsilî; adlar, rakamlar ve kişiler kurgusaldır.",
+            "en": "No; this is a setup example. Images are representative and names, figures and people are fictional.",
+            "ar": "لا؛ هذا مثال تركيب. الصور تمثيلية والأسماء والأرقام والأشخاص افتراضيون."
+          },
           "soru": {
             "tr": "Sitedeki görseller ve veriler gerçek midir?",
             "en": "Are the images and data on the site real?",
@@ -2406,9 +2457,9 @@
         "errcolor": "var(--mx-color-danger, #b42318)",
         "radius": "14px",
         "title": {
-          "tr": "Teklif isteyin",
-          "en": "Request a quote",
-          "ar": "اطلب عرض سعر"
+          "tr": "Randevu isteyin",
+          "en": "Request a session",
+          "ar": "اطلب موعدًا"
         },
         "description": {
           "tr": "Bilgilerinizi bırakın; en geç iki iş günü içinde dönüş yaparız. Bu form demodur; e-posta istemciniz açılır, veri saklanmaz.",
@@ -2421,9 +2472,9 @@
           "ar": "Sedir Masaj"
         },
         "panelText": {
-          "tr": "Görseller temsilidir; bu bir kurulum demosıdır.",
-          "en": "Images are representative; this is a setup demo.",
-          "ar": "الصور تمثيلية وهذا عرض تجريبي."
+          "tr": "Görseller temsilîdir; masaj tıbbi tedavinin yerini tutmaz.",
+          "en": "Images are representative; massage is not a substitute for medical treatment.",
+          "ar": "الصور تمثيلية والتدليك لا يغني عن العلاج الطبي."
         },
         "address": {
           "tr": "Çınarlı Sokak No: 4, Şehitkamil, Gaziantep (kurgusal adres)",
@@ -2477,9 +2528,9 @@
         },
         "social": [],
         "formTitle": {
-          "tr": "Teklif formu",
-          "en": "Quote form",
-          "ar": "نموذج الطلب"
+          "tr": "Randevu formu",
+          "en": "Booking form",
+          "ar": "نموذج حجز موعد"
         },
         "nameLabel": {
           "tr": "Ad Soyad",
@@ -2510,25 +2561,25 @@
           {
             "id": "a",
             "name": {
-              "tr": "Yeni talep",
-              "en": "New request",
-              "ar": "طلب جديد"
+              "tr": "Klasik masaj",
+              "en": "Classic massage",
+              "ar": "تدليك كلاسيكي"
             }
           },
           {
             "id": "b",
             "name": {
-              "tr": "Ölçü ve keşif",
-              "en": "Measure and survey",
-              "ar": "قياس واستقصاء"
+              "tr": "Derin doku masajı",
+              "en": "Deep tissue massage",
+              "ar": "تدليك الأنسجة العميقة"
             }
           },
           {
             "id": "c",
             "name": {
-              "tr": "Teknik soru",
-              "en": "Technical question",
-              "ar": "سؤال فني"
+              "tr": "Aromaterapi / çift odası",
+              "en": "Aromatherapy / couples room",
+              "ar": "علاج عطري / غرفة الأزواج"
             }
           },
           {
@@ -2615,7 +2666,8 @@
           "tr": "Merhaba, web sitenizden yazıyorum.",
           "en": "Hello, I am writing from your website.",
           "ar": "مرحبًا، أكتب إليكم من موقعكم الإلكتروني."
-        }
+        },
+        "formAction": ""
       },
       "data": [],
       "veri": {
@@ -2665,7 +2717,7 @@
           "ar": "تُدوَّن درجة الضغط المفضلة لديك والمناطق الحساسة للجلسة التالية."
         },
         "icon3": "edit_note",
-        "img": "guzellik-galeri-2.webp",
+        "img": "guzellik-ekip-2.webp",
         "bgcolor": "var(--mx-site-surface-2, #ececea)",
         "fontcolor": "var(--mx-site-text, #1b1b1b)",
         "margintop": "20",
@@ -2753,9 +2805,9 @@
           "ar": "اتصل بنا"
         },
         "callText": {
-          "tr": "Hafta içi 09:00 – 18:00",
-          "en": "Weekdays 09:00 – 18:00",
-          "ar": "أيام الأسبوع 09:00 – 18:00"
+          "tr": "Salı – Pazar 10:00 – 20:00",
+          "en": "Tue–Sun 10:00 – 20:00",
+          "ar": "الثلاثاء – الأحد 10:00 – 20:00"
         },
         "callBtn": {
           "tr": "Ara",
@@ -2783,9 +2835,9 @@
           "ar": "البريد الإلكتروني"
         },
         "mailText": {
-          "tr": "Teklif ve detaylı sorular için",
-          "en": "For quotes and detailed questions",
-          "ar": "لعروض الأسعار والأسئلة التفصيلية"
+          "tr": "Randevu ve sorularınız için",
+          "en": "For bookings and questions",
+          "ar": "للحجز والاستفسارات"
         },
         "mailBtn": {
           "tr": "E-posta gönder",
@@ -2947,7 +2999,7 @@
         "errcolor": "var(--mx-color-danger, #b42318)",
         "radius": "14px",
         "logo_maxh": "52px",
-        "logo_plate": false,
+        "logo_plate": true,
         "about": {
           "tr": "Sedir Masaj demo temadır; içerik kurgusaldır, masaj tıbbi tedavinin yerini tutmaz.",
           "en": "Sedir Massage is a demo theme; the content is fictional and massage does not replace medical treatment.",
