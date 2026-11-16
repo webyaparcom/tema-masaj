@@ -1,140 +1,156 @@
-<section class="modulex-ik modulex-ik--{{ikstil}}" id="ik-{{id}}" style="--ik-n:{{ikcount}}">
-  <div class="modulex-ik__wrap">
-    {{ikhead}}
-    <ul class="modulex-ik__list" aria-label="{{groupLabel}}">{{ikcards}}</ul>
+<section class="modulex-iletisim-zarf{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-iletisim-zarf-ic">
+    {{fbbas}}
+    {{fbgovde}}
   </div>
 </section>
 
 <style>
-  /* iletisim-kartlari — Hızlı iletişim kartları (31 Eki 2026, G8-C). Renkler yalnız desing anahtarı (token varsayılanlı). */
-  .modulex-ik {
-    box-sizing: border-box;
-    width: 100%;
-    padding-block: clamp(36px, 6vw, 72px);
-    padding-inline: clamp(16px, 4vw, 32px);
-    background: --bgcolor--;
-    color: --textcolor--;
-  }
-  .modulex-ik *, .modulex-ik *::before, .modulex-ik *::after { box-sizing: border-box; }
-  .modulex-ik__wrap { max-width: --max--; margin-inline: auto; }
+  /* iletisim-zarf — Yazma eylemini mektup metaforuyla anlatır; sıcak, kişisel markalar için. */
+  .modulex-iletisim-zarf { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-iletisim-zarf *, .modulex-iletisim-zarf *::before, .modulex-iletisim-zarf *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-iletisim-zarf :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-iletisim-zarf :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-iletisim-zarf :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-iletisim-zarf :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-iletisim-zarf img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-iletisim-zarf) img { height: auto; }
+  .modulex-iletisim-zarf [hidden] { display: none !important; }
+  .modulex-iletisim-zarf :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-iletisim-zarf :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-iletisim-zarf-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-iletisim-zarf-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-iletisim-zarf--bassiz .modulex-iletisim-zarf-bas { display: none; }
+  .modulex-iletisim-zarf-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-iletisim-zarf-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-iletisim-zarf-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-iletisim-zarf-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-iletisim-zarf-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-iletisim-zarf-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-iletisim-zarf-dugme:hover { transform: translateY(-2px); }
+  .modulex-iletisim-zarf-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-iletisim-zarf-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-iletisim-zarf-dugme .material-symbols-outlined { font-size: 20px; }
 
-  .modulex-ik__head { margin-block-end: 28px; text-align: center; }
-  .modulex-ik__h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.3rem); line-height: 1.2; color: --textcolor--; }
-  .modulex-ik__desc { margin: 0 auto; max-width: 60ch; color: --mutedcolor--; line-height: 1.7; }
-
-  .modulex-ik__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--ik-n, 4), minmax(0, 1fr)); gap: 20px; }
-
-  /* === kartli (varsayılan): dikey kart, ikon dairesi üstte, düğme altta === */
-  .modulex-ik__card {
-    position: relative; display: flex; flex-direction: column; gap: 14px; min-width: 0;
-    padding: 26px 22px 22px;
-    background: --surface--; border: 1px solid --bordercolor--; border-radius: --radius--;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
-  .modulex-ik__card:hover,
-  .modulex-ik__card:focus-within { transform: translateY(-6px); box-shadow: 0 22px 40px -26px rgba(0, 0, 0, 0.45); border-color: color-mix(in srgb, --accent-- 45%, transparent); }
-  .modulex-ik__icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 56px; height: 56px; border-radius: 16px;
-    background: color-mix(in srgb, --accent-- 14%, transparent); color: --accent--;
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
-  }
-  .modulex-ik__icon .material-symbols-outlined { font-size: 28px; }
-  .modulex-ik__card:hover .modulex-ik__icon { background: --accent--; color: --accentText--; transform: rotate(-6deg) scale(1.05); }
-  .modulex-ik__body { display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; min-width: 0; }
-  .modulex-ik__title { margin: 0; font-size: 1.1rem; line-height: 1.3; color: --textcolor--; }
-  .modulex-ik__value { margin: 0; font-weight: 600; font-size: 1rem; color: --textcolor--; overflow-wrap: anywhere; text-align: start; }
-  .modulex-ik__text { margin: 0; font-size: 0.9rem; line-height: 1.55; color: --mutedcolor--; }
-
-  .modulex-ik a.modulex-ik__btn:link,
-  .modulex-ik a.modulex-ik__btn:visited {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    min-height: 46px; padding-inline: 18px; border-radius: 999px;
-    background: --accent--; color: --accentText--;
-    font-weight: 600; font-size: 0.95rem; text-decoration: none; cursor: pointer;
-    transition: filter 0.2s ease, gap 0.2s ease;
-  }
-  .modulex-ik a.modulex-ik__btn:hover,
-  .modulex-ik a.modulex-ik__btn:focus-visible { filter: brightness(1.08); gap: 12px; color: --accentText--; }
-  .modulex-ik a.modulex-ik__btn:focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
-  .modulex-ik__arrow { font-size: 18px; }
-  [dir="rtl"] .modulex-ik__arrow { transform: scaleX(-1); }
-
-  /* === ikon-serit: tek yatay şerit, dikey ayıraçlar, tüm öğe bağlantı gibi === */
-  .modulex-ik--ikon-serit .modulex-ik__list { gap: 0; background: --surface--; border: 1px solid --bordercolor--; border-radius: --radius--; overflow: hidden; }
-  .modulex-ik--ikon-serit .modulex-ik__card {
-    flex-direction: row; align-items: center; gap: 16px; padding: 22px 24px;
-    background: transparent; border: 0; border-radius: 0; border-inline-end: 1px solid --bordercolor--;
-  }
-  .modulex-ik--ikon-serit .modulex-ik__card:last-child { border-inline-end: 0; }
-  .modulex-ik--ikon-serit .modulex-ik__card:hover,
-  .modulex-ik--ikon-serit .modulex-ik__card:focus-within { transform: none; box-shadow: none; background: color-mix(in srgb, --accent-- 8%, transparent); }
-  .modulex-ik--ikon-serit .modulex-ik__icon { width: 48px; height: 48px; border-radius: 999px; flex: 0 0 auto; }
-  .modulex-ik--ikon-serit .modulex-ik__text { display: none; }
-  .modulex-ik--ikon-serit .modulex-ik__title { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: --mutedcolor--; }
-  .modulex-ik--ikon-serit .modulex-ik__value { font-size: 1.05rem; }
-  .modulex-ik--ikon-serit a.modulex-ik__btn:link,
-  .modulex-ik--ikon-serit a.modulex-ik__btn:visited { position: absolute; inset: 0; border-radius: 0; background: transparent; color: transparent; font-size: 0; padding: 0; min-height: 0; }
-  .modulex-ik--ikon-serit a.modulex-ik__btn:hover { filter: none; }
-  .modulex-ik--ikon-serit a.modulex-ik__btn:focus-visible { outline-offset: -3px; }
-  .modulex-ik--ikon-serit .modulex-ik__arrow { display: none; }
-
-  /* === dikey-liste: alt alta satırlar, ikon solda, düğme sağda === */
-  .modulex-ik--dikey-liste .modulex-ik__list { grid-template-columns: minmax(0, 1fr); gap: 12px; max-width: 820px; margin-inline: auto; }
-  .modulex-ik--dikey-liste .modulex-ik__head { text-align: start; max-width: 820px; margin-inline: auto; }
-  .modulex-ik--dikey-liste .modulex-ik__desc { margin: 0; }
-  .modulex-ik--dikey-liste .modulex-ik__card { flex-direction: row; align-items: center; gap: 18px; padding: 18px 20px; border-radius: calc(--radius-- * 0.7); border-inline-start: 4px solid --accent--; }
-  .modulex-ik--dikey-liste .modulex-ik__card:hover,
-  .modulex-ik--dikey-liste .modulex-ik__card:focus-within { transform: translateX(6px); }
-  [dir="rtl"] .modulex-ik--dikey-liste .modulex-ik__card:hover,
-  [dir="rtl"] .modulex-ik--dikey-liste .modulex-ik__card:focus-within { transform: translateX(-6px); }
-  .modulex-ik--dikey-liste .modulex-ik__icon { width: 50px; height: 50px; border-radius: 999px; flex: 0 0 auto; }
-  .modulex-ik--dikey-liste .modulex-ik__body { flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: 12px; }
-  .modulex-ik--dikey-liste .modulex-ik__title { font-size: 1rem; }
-  .modulex-ik--dikey-liste .modulex-ik__text { flex-basis: 100%; }
-  .modulex-ik--dikey-liste a.modulex-ik__btn:link,
-  .modulex-ik--dikey-liste a.modulex-ik__btn:visited { flex: 0 0 auto; background: transparent; color: --accent--; border: 2px solid --accent--; }
-  .modulex-ik--dikey-liste a.modulex-ik__btn:hover,
-  .modulex-ik--dikey-liste a.modulex-ik__btn:focus-visible { background: --accent--; color: --accentText--; filter: none; }
-
-  /* giriş animasyonu: yalnız JS işaretlediğinde gizle */
-  .modulex-ik[data-ik-anim] .modulex-ik__card { opacity: 0; transform: translateY(14px); transition: opacity 0.3s ease, transform 0.3s ease; transition-delay: calc(var(--ik-i, 0) * 0.06s); }
-  .modulex-ik.is-in .modulex-ik__card { opacity: 1; transform: none; transition-delay: calc(var(--ik-i, 0) * 0.06s), calc(var(--ik-i, 0) * 0.06s); }
-  .modulex-ik.is-in .modulex-ik__card:hover { transition-delay: 0s; }
-
-  @media (max-width: 1024px) {
-    .modulex-ik__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .modulex-ik--ikon-serit .modulex-ik__card:nth-child(2n) { border-inline-end: 0; }
-    .modulex-ik--ikon-serit .modulex-ik__card:nth-child(-n + 2) { border-block-end: 1px solid --bordercolor--; }
-  }
+  .modulex-iletisim-zarf-zarf { position: relative; max-width: 760px; margin-inline: auto; padding-block-start: 72px; border-radius: --yuvarlak--; background: --bg--; box-shadow: 0 24px 60px color-mix(in srgb, --text-- 12%, transparent); }
+  .modulex-iletisim-zarf-kapak { position: absolute; inset-block-start: 0; inset-inline: 0; height: 110px; background: color-mix(in srgb, --accent-- 16%, --bg--); clip-path: polygon(0 0, 100% 0, 50% 100%); border-start-start-radius: --yuvarlak--; border-start-end-radius: --yuvarlak--; transition: clip-path 0.5s ease; }
+  .modulex-iletisim-zarf-zarf:focus-within .modulex-iletisim-zarf-kapak { clip-path: polygon(0 0, 100% 0, 50% 40%); }
+  .modulex-iletisim-zarf-pul { position: absolute; inset-block-start: 18px; inset-inline-end: 22px; display: grid; place-items: center; width: 52px; height: 60px; border: 2px dashed --accent--; border-radius: 6px; background: --bg--; color: --accentInk--; transform: rotate(6deg); }
+  .modulex-iletisim-zarf-ici { position: relative; padding: 24px clamp(20px, 5vw, 48px) clamp(24px, 4vw, 40px); }
+  .modulex-iletisim-zarf-liste { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-block-start: 28px; }
+  .modulex-iletisim-zarf-kanal { display: inline-flex; align-items: center; gap: 8px; }
+  .modulex-iletisim-zarf-oikon { color: --accentInk--; font-size: 20px; }
   @media (max-width: 768px) {
-    .modulex-ik__list { grid-template-columns: minmax(0, 1fr); }
-    .modulex-ik--ikon-serit .modulex-ik__card { border-inline-end: 0; border-block-end: 1px solid --bordercolor--; }
-    .modulex-ik--ikon-serit .modulex-ik__card:last-child { border-block-end: 0; }
-    .modulex-ik--dikey-liste .modulex-ik__card { flex-wrap: wrap; }
-    .modulex-ik--dikey-liste a.modulex-ik__btn:link,
-    .modulex-ik--dikey-liste a.modulex-ik__btn:visited { flex-basis: 100%; }
-    .modulex-ik--dikey-liste .modulex-ik__card:hover { transform: none; }
-    [class*="modulex"] { max-width: 100%; box-sizing: border-box; }
+    .modulex-iletisim-zarf-zarf { padding-block-start: 56px; }
+    .modulex-iletisim-zarf-kapak { height: 80px; }
+    .modulex-iletisim-zarf-pul { width: 42px; height: 48px; inset-block-start: 10px; }
+    .modulex-iletisim-zarf-liste { flex-direction: column; align-items: center; }
+  }
+  .modulex-iletisim-zarf-kikon { flex: none; display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, --accent-- 14%, transparent); color: --accentInk--; font-size: 24px; }
+  .modulex-iletisim-zarf-ketiket { display: block; color: --muted--; font-size: 0.82rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
+  .modulex-iletisim-zarf-deger { color: inherit; font-weight: 650; text-decoration: none; overflow-wrap: anywhere; transition: color 0.2s ease; }
+  a.modulex-iletisim-zarf-deger:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-iletisim-zarf-eylem { display: inline-flex; align-items: center; gap: 6px; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.2s ease; }
+  .modulex-iletisim-zarf-eylem:hover { gap: 10px; }
+  .modulex-iletisim-zarf-eylem .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-zarf-kopya { display: none; align-items: center; gap: 6px; min-height: 36px; padding: 6px 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: --text--; font: inherit; font-size: 0.85rem; font-weight: 650; transition: border-color 0.2s ease, background 0.2s ease; }
+  .modulex-iletisim-zarf--kjs .modulex-iletisim-zarf-kopya { display: inline-flex; }
+  .modulex-iletisim-zarf-kopya:hover { border-color: --accent--; }
+  .modulex-iletisim-zarf-kopya .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-zarf--kopyalandi { background: color-mix(in srgb, --accent-- 14%, transparent); }
+  .modulex-iletisim-zarf-sosyal { display: grid; gap: 10px; }
+  .modulex-iletisim-zarf-sbaslik { color: --muted--; font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-zarf-sliste { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-iletisim-zarf-cip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px; border: 1px solid --cizgi--; border-radius: 999px; color: inherit; font-weight: 650; text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .modulex-iletisim-zarf-cip:hover { border-color: --accent--; transform: translateY(-2px); }
+  .modulex-iletisim-zarf-cikon { font-size: 18px; }
+  .modulex-iletisim-zarf-harita { position: relative; overflow: hidden; min-height: 280px; border-radius: --yuvarlak--; background: --kartBg--; }
+  .modulex-iletisim-zarf-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .modulex-iletisim-zarf-hdesen { position: absolute; inset: 0; display: grid; place-items: center; background-color: color-mix(in srgb, --accent-- 8%, --kartBg--); background-image: linear-gradient(color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), radial-gradient(circle at 30% 40%, color-mix(in srgb, --accent-- 18%, transparent) 0 18%, transparent 19%); background-size: 36px 36px, 36px 36px, 100% 100%; }
+  .modulex-iletisim-zarf-pin { color: --accentInk--; font-size: 56px; animation: modulex-iletisim-zarf-zipla 2.4s ease-in-out infinite; }
+  @keyframes modulex-iletisim-zarf-zipla { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .modulex-iletisim-zarf-hyol { position: absolute; inset-block-end: 16px; inset-inline-start: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: 999px; background: --bg--; color: --text--; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px color-mix(in srgb, --text-- 16%, transparent); transition: transform 0.2s ease; }
+  .modulex-iletisim-zarf-hyol:hover { transform: translateY(-2px); }
+  .modulex-iletisim-zarf-hyol .material-symbols-outlined { font-size: 18px; color: --accentInk--; }
+
+  .modulex-iletisim-zarf-form { display: grid; gap: 18px; }
+  .modulex-iletisim-zarf-fbaslik { font-size: 1.3rem; font-weight: 750; }
+  .modulex-iletisim-zarf-alanlar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .modulex-iletisim-zarf-alan { display: flex; flex-direction: column-reverse; gap: 6px; }
+  .modulex-iletisim-zarf-alan--genis { grid-column: 1 / -1; }
+  .modulex-iletisim-zarf-etiket { font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-zarf-girdi { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid color-mix(in srgb, currentColor 26%, transparent); border-radius: 12px; background: color-mix(in srgb, currentColor 4%, transparent); color: inherit; font: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  textarea.modulex-iletisim-zarf-girdi { min-height: 132px; resize: vertical; }
+  .modulex-iletisim-zarf-girdi:focus { outline: none; border-color: --accent--; box-shadow: 0 0 0 3px color-mix(in srgb, --accent-- 28%, transparent); }
+  .modulex-iletisim-zarf-secim { cursor: pointer; }
+  .modulex-iletisim-zarf-secim option { background: --bg--; color: --text--; }
+  .modulex-iletisim-zarf-onay { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; }
+  .modulex-iletisim-zarf-onay input { flex: none; width: 20px; height: 20px; margin-block-start: 2px; accent-color: --accent--; cursor: pointer; }
+  .modulex-iletisim-zarf-onay a { color: inherit; font-weight: 700; text-underline-offset: 3px; }
+  .modulex-iletisim-zarf-gonder { justify-self: start; font: inherit; font-weight: 700; cursor: pointer; }
+  .modulex-iletisim-zarf-gonder:disabled { opacity: 0.6; cursor: progress; }
+  .modulex-iletisim-zarf-durum { min-height: 1.5em; font-size: 0.95rem; font-weight: 650; }
+  .modulex-iletisim-zarf-durum:empty { display: none; }
+  .modulex-iletisim-zarf-durum--hata { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .modulex-iletisim-zarf-bal { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-zarf-alanlar { grid-template-columns: minmax(0, 1fr); }
+    .modulex-iletisim-zarf-gonder { justify-self: stretch; justify-content: center; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-zarf :is(.modulex-iletisim-zarf-baslik, .modulex-iletisim-zarf-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-zarf-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-zarf { padding-inline: 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .modulex-ik *, .modulex-ik *::before, .modulex-ik *::after { animation: none !important; transition: none !important; }
-    .modulex-ik[data-ik-anim] .modulex-ik__card { opacity: 1; transform: none; }
-    .modulex-ik__card:hover { transform: none; }
+    .modulex-iletisim-zarf *, .modulex-iletisim-zarf *::before, .modulex-iletisim-zarf *::after { animation: none !important; transition: none !important; }
   }
 </style>
-
 <script>
-  (function () {
-    var kok = document.getElementById("ik-{{id}}");
-    if (!kok || kok.getAttribute("data-ik-hazir") === "1") { return; }
-    kok.setAttribute("data-ik-hazir", "1");
-    if (window.IntersectionObserver && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      kok.setAttribute("data-ik-anim", "1");
-      var io = new IntersectionObserver(function (g) {
-        for (var i = 0; i < g.length; i++) { if (g[i].isIntersecting) { kok.classList.add("is-in"); io.disconnect(); } }
-      }, { threshold: 0.1 });
-      io.observe(kok);
-    }
+  (() => {
+    const P = "modulex-iletisim-zarf";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const form = (s, P) => {
+        s.querySelectorAll("form[data-fb-form]").forEach((f) => {
+          const durum = f.querySelector("[role=status]");
+          const yaz = (m, hata) => { if (durum) { durum.textContent = m || ""; durum.classList.toggle(P + "-durum--hata", !!hata); } };
+          let t0 = Date.now();
+          const al = (ad) => { const e = f.elements.namedItem(ad); return e && "value" in e ? String(e.value).trim() : ""; };
+          const etiket = (ad) => { const e = f.elements.namedItem(ad); const l = e && e.id ? f.querySelector(`label[for="${e.id}"]`) : null; return l ? l.textContent.trim() : ad; };
+          const konuMetin = () => { const e = f.elements.namedItem("topic"); return e && e.selectedIndex > 0 ? e.options[e.selectedIndex].text.trim() : ""; };
+          f.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (!f.checkValidity()) { f.reportValidity(); return; }
+            if (al("website")) return;
+            const govde = ["name", "email", "phone"].filter(al).map((k) => `${etiket(k)}: ${al(k)}`)
+              .concat(konuMetin() ? [`${etiket("topic")}: ${konuMetin()}`] : [], al("message") ? ["", al("message")] : []).join("\n");
+            const d = f.dataset;
+            if (d.action) {
+              const b = f.querySelector("[type=submit]");
+              if (b) b.disabled = true;
+              const yuk = { name: al("name"), email: al("email"), phone: al("phone"), topic: konuMetin(), message: al("message"), kvkk: true, lang: document.documentElement.lang || "", page: location.pathname, website: al("website"), t: Date.now() - t0 };
+              fetch(d.action, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(yuk) })
+                .then((r) => r.json().catch(() => ({})).then((j) => r.ok && j && j.ok !== false))
+                .then((ok) => { if (b) b.disabled = false; yaz(ok ? d.ok : d.hata, !ok); if (ok) { f.reset(); t0 = Date.now(); } })
+                .catch(() => { if (b) b.disabled = false; yaz(d.hata, true); });
+              return;
+            }
+            if (d.gonderim === "whatsapp" && d.wa) { window.open(`https://wa.me/${d.wa}?text=${encodeURIComponent(govde)}`, "_blank", "noopener"); return; }
+            if (d.eposta) {
+              const konu = [d.konu || "", konuMetin()].filter(Boolean).join(" - ");
+              location.href = `mailto:${d.eposta}?subject=${encodeURIComponent(konu)}&body=${encodeURIComponent(govde.replace(/\n/g, "\r\n"))}`;
+            }
+          });
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      form(s, P, az);
+    });
   })();
 </script>

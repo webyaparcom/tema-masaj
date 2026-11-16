@@ -1,97 +1,67 @@
-<section class="modulex-lb modulex-lb--{{lbstil}}" id="lb-{{id}}" style="{{lbvars}}">
-  <div class="modulex-lb__wrap">
-    {{lbhead}}
-    <div class="modulex-lb__band" role="region" aria-label="{{listLabel}}">
-      <div class="modulex-lb__track">
-        <ul class="modulex-lb__set">{{lbset}}</ul>
-        {{lbkopya}}
-      </div>
-    </div>
+<section class="modulex-referans-perde{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-referans-perde-ic">
+    {{fbbas}}
+    {{fbgovde}}
   </div>
 </section>
 
 <style>
-  /* logo-bandi — Referans logo bandı (31 Eki 2026, G8-C). Renkler yalnız desing anahtarı (token varsayılanlı). */
-  .modulex-lb {
-    box-sizing: border-box;
-    width: 100%;
-    padding-block: clamp(32px, 5vw, 64px);
-    padding-inline: clamp(16px, 4vw, 32px);
-    background: --bgcolor--;
-    color: --textcolor--;
-    overflow: hidden;
-  }
-  .modulex-lb *, .modulex-lb *::before, .modulex-lb *::after { box-sizing: border-box; }
-  .modulex-lb__wrap { max-width: --max--; margin-inline: auto; }
+  /* referans-perde — Bilgi katmanı görselin üstüne kayar (perde/reveal): logolar sade durur, ayrıntı etkileşimle gelir; çevirmeden farklı olarak karo yerinde kalır. */
+  .modulex-referans-perde { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-referans-perde *, .modulex-referans-perde *::before, .modulex-referans-perde *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-referans-perde :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-referans-perde :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-referans-perde :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-referans-perde :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-referans-perde img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-referans-perde) img { height: auto; }
+  .modulex-referans-perde [hidden] { display: none !important; }
+  .modulex-referans-perde :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-referans-perde :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-referans-perde-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-referans-perde-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-referans-perde--bassiz .modulex-referans-perde-bas { display: none; }
+  .modulex-referans-perde-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-referans-perde-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-referans-perde-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-referans-perde-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-referans-perde-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-referans-perde-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-referans-perde-dugme:hover { transform: translateY(-2px); }
+  .modulex-referans-perde-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-referans-perde-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-referans-perde-dugme .material-symbols-outlined { font-size: 20px; }
 
-  .modulex-lb__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin-block-end: 24px; }
-  .modulex-lb__title { margin: 0; font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem); line-height: 1.3; color: --textcolor--; }
-  .modulex-lb__desc { margin: 0; font-size: 0.95rem; color: --mutedcolor--; }
+  .modulex-referans-perde-izgara { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .modulex-referans-perde-karo > *, .modulex-referans-perde-karo > .modulex-referans-perde-bag { position: relative; display: grid; overflow: hidden; border: 1px solid --cizgi--; border-radius: --yuvarlak--; background-color: --kartBg--; }
+  .modulex-referans-perde-yuz { display: grid; place-items: center; min-height: 150px; padding: 24px; text-align: center; transition: transform 0.4s ease; }
+  .modulex-referans-perde-kelime { font-size: 1.15rem; }
+  .modulex-referans-perde-logo { filter: grayscale(1) brightness(1.8); }
+  .modulex-referans-perde-perde { position: absolute; inset-inline: 0; inset-block-end: 0; display: grid; gap: 4px; padding: 14px 16px; background-color: --vurguBg--; color: --vurguText--; transform: translateY(101%); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .modulex-referans-perde-karo:hover .modulex-referans-perde-perde, .modulex-referans-perde-karo:focus-within .modulex-referans-perde-perde { transform: none; }
+  .modulex-referans-perde-karo:hover .modulex-referans-perde-yuz, .modulex-referans-perde-karo:focus-within .modulex-referans-perde-yuz { transform: translateY(-18%); }
+  .modulex-referans-perde-pad { font-weight: 800; line-height: 1.3; }
+  .modulex-referans-perde-pbilgi { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (hover: none) { .modulex-referans-perde-perde { position: static; transform: none; } .modulex-referans-perde-karo:hover .modulex-referans-perde-yuz { transform: none; } }
+  @media (max-width: 1024px) { .modulex-referans-perde-izgara { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 768px) { .modulex-referans-perde-izgara { grid-template-columns: repeat(2, minmax(0, 1fr)); } .modulex-referans-perde-perde { position: static; transform: none; } .modulex-referans-perde-karo:hover .modulex-referans-perde-yuz { transform: none; } .modulex-referans-perde-yuz { min-height: 110px; padding: 16px; } }
+  .modulex-referans-perde-logo { display: block; width: auto; max-width: 100%; height: clamp(32px, 4vw, 48px); object-fit: contain; filter: grayscale(1); transition: filter 0.3s ease, transform 0.3s ease; }
+  .modulex-referans-perde-kelime { display: inline-block; color: --text--; font-family: var(--mx-font-heading, inherit); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; transition: color 0.3s ease; }
+  .modulex-referans-perde-bag { color: inherit; text-decoration: none; }
+  .modulex-referans-perde-sektor { color: --accentInk--; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .modulex-referans-perde-kmetin { color: --muted--; font-size: 0.95rem; line-height: 1.65; }
+  .modulex-referans-perde-yil { color: --muted--; font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .modulex-referans-perde-harf img { width: 100%; height: 100%; object-fit: contain; }
 
-  .modulex-lb__set { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: clamp(28px, 4vw, 64px); }
-  .modulex-lb__item { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; min-height: 44px; }
-  .modulex-lb__link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; color: inherit; text-decoration: none; }
-  .modulex-lb__img {
-    display: block; height: var(--lb-h, 48px); width: auto; max-width: 180px; object-fit: contain;
-    filter: grayscale(1); opacity: 0.62;
-    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-  }
-  .modulex-lb--renkli .modulex-lb__img { filter: none; opacity: 1; }
-  .modulex-lb__item:hover .modulex-lb__img,
-  .modulex-lb__link:focus-visible .modulex-lb__img { filter: none; opacity: 1; transform: scale(1.04); }
-  .modulex-lb__link:focus-visible { outline: 3px solid --accent--; outline-offset: 4px; border-radius: 6px; }
-  /* görselsiz satır: metin rozeti (marka adı) */
-  .modulex-lb__word {
-    display: inline-flex; align-items: center; height: var(--lb-h, 48px); padding-inline: 18px; border-radius: 999px;
-    border: 1px solid --bordercolor--; background: --surface--; color: --mutedcolor--;
-    font-weight: 600; font-size: 1rem; letter-spacing: 0.02em; white-space: nowrap;
-    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  }
-  .modulex-lb__item:hover .modulex-lb__word { color: --textcolor--; border-color: --accent--; transform: translateY(-2px); }
-
-  /* === kayan (varsayılan): iki kopya, sonsuz kayma; hover'da durur; kenarlar soluk === */
-  .modulex-lb--kayan .modulex-lb__band {
-    mask-image: linear-gradient(to right, transparent, currentColor 8%, currentColor 92%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, currentColor 8%, currentColor 92%, transparent);
-  }
-  .modulex-lb--kayan .modulex-lb__track { display: flex; width: max-content; gap: clamp(28px, 4vw, 64px); animation: modulexLbKay var(--lb-sure, 32s) linear infinite; }
-  [dir="rtl"] .modulex-lb--kayan .modulex-lb__track { animation-name: modulexLbKayRtl; }
-  .modulex-lb--kayan .modulex-lb__band:hover .modulex-lb__track,
-  .modulex-lb--kayan .modulex-lb__band:focus-within .modulex-lb__track { animation-play-state: paused; }
-  @keyframes modulexLbKay { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @keyframes modulexLbKayRtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
-
-  /* === izgara: çizgili hücreler (tablo hissi), kayma yok === */
-  .modulex-lb--izgara .modulex-lb__set { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0; /* 1200px'te 8 hücre tek satır (150'de 8. hücre yalnız kalıyordu) */ border-block-start: 1px solid --bordercolor--; border-inline-start: 1px solid --bordercolor--; }
-  .modulex-lb--izgara .modulex-lb__item { min-height: 112px; padding: 16px; border-block-end: 1px solid --bordercolor--; border-inline-end: 1px solid --bordercolor--; transition: background-color 0.25s ease; }
-  .modulex-lb--izgara .modulex-lb__item:hover { background: --surface--; }
-  .modulex-lb--izgara .modulex-lb__img { max-width: 100%; }
-
-  /* === cerceveli-kartlar: kart + marka adı altta === */
-  .modulex-lb--cerceveli-kartlar .modulex-lb__set { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
-  .modulex-lb--cerceveli-kartlar .modulex-lb__item {
-    min-height: 128px; padding: 18px 16px;
-    background: --surface--; border: 1px solid --bordercolor--; border-radius: --radius--;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
-  .modulex-lb--cerceveli-kartlar .modulex-lb__item:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -20px rgba(0, 0, 0, 0.4); border-color: color-mix(in srgb, --accent-- 45%, transparent); }
-  .modulex-lb--cerceveli-kartlar .modulex-lb__link,
-  .modulex-lb--cerceveli-kartlar .modulex-lb__item { flex-direction: column; gap: 10px; }
-  .modulex-lb--cerceveli-kartlar .modulex-lb__item[title]::after { content: attr(title); font-size: 0.85rem; color: --mutedcolor--; text-align: center; }
-  .modulex-lb--cerceveli-kartlar .modulex-lb__word { background: transparent; border: 0; height: auto; padding: 0; white-space: normal; text-align: center; color: --textcolor--; }
-
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-referans-perde :is(.modulex-referans-perde-baslik, .modulex-referans-perde-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-referans-perde-baslik { line-height: 1.35; }
   @media (max-width: 768px) {
-    .modulex-lb__head { flex-direction: column; }
-    .modulex-lb--izgara .modulex-lb__set { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .modulex-lb--cerceveli-kartlar .modulex-lb__set { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    [class*="modulex"] { max-width: 100%; box-sizing: border-box; }
+    .modulex-referans-perde { padding-inline: 16px; }
   }
-  /* reduced-motion: kayma yok → kopya gizli, tek set sarılan statik ızgara */
   @media (prefers-reduced-motion: reduce) {
-    .modulex-lb *, .modulex-lb *::before, .modulex-lb *::after { animation: none !important; transition: none !important; }
-    .modulex-lb--kayan .modulex-lb__track { width: auto; display: block; }
-    .modulex-lb--kayan .modulex-lb__set { flex-wrap: wrap; justify-content: center; gap: 20px 36px; }
-    .modulex-lb--kayan .modulex-lb__set--kopya { display: none; }
-    .modulex-lb--kayan .modulex-lb__band { mask-image: none; -webkit-mask-image: none; }
+    .modulex-referans-perde *, .modulex-referans-perde *::before, .modulex-referans-perde *::after { animation: none !important; transition: none !important; }
   }
 </style>
